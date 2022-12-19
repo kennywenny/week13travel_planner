@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const Traveller = require('../../../model/traveller')
+const Location = require('../../../model/location')
 
 router.get('/:id', async (req, res) => {
   try {
-    const result = await Traveller.findByPk(req.params.id)
+    const result = await Location.findByPk(req.params.id)
     if (!result) {
       res.status(404).end()
     } else {
@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
 
 router.get('/', async (_, res) => {
   try {
-    const results = await Traveller.findAll()
+    const results = await Location.findAll()
     res.json(results)
   } catch (err) {
     res.status(500).end()
@@ -25,7 +25,7 @@ router.get('/', async (_, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    await Traveller.create(req.body)
+    await Location.create(req.body)
     res.status(204).end()
   } catch (err) {
     res.status(500).end()
@@ -33,7 +33,7 @@ router.post('/', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
-  const result = await Traveller.destroy({
+  const result = await Location.destroy({
     where: {
       id: req.params.id
     }
