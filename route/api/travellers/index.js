@@ -2,8 +2,16 @@ const router = require('express').Router();
 const Traveller = require('../../../model/traveller')
 
 router.get('/:id', async (req, res) => {
-  const result = await Traveller.findByPk(req.params.id)
-  res.json(result)
+  try {
+    const result = await Traveller.findByPk(req.params.id)
+    if (!result) {
+      res.status(404).end()
+    } else {
+      res.json(result)
+    }
+  } catch (err) {
+    res.status(500).end()
+  }
 })
 
 router.get('/', async (_, res) => {
