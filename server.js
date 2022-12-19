@@ -9,8 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const port = process.env.PORT
 
-// TODO: make force = false
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
   })
