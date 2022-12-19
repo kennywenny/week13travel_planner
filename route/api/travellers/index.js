@@ -16,4 +16,13 @@ router.post('/', async (req, res) => {
   res.status(204).end()
 })
 
+router.delete('/:id', async (req, res) => {
+  await Traveller.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  res.status(204).end()
+})
+
 module.exports = router;

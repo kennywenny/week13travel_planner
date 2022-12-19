@@ -14,12 +14,6 @@ In this mini-project, you will work with a group to build an API using Node.js, 
 
 ## Acceptance Criteria
 
-* It's done when the GET route `/api/travellers` returns all traveller data without associated trips in Insomnia.
-
-* It's done when the POST route `/api/travellers` creates traveller data and returns a successful response in Insomnia.
-
-* It's done when the GET route `/api/travellers/:id` returns a single traveller's data with their associated trips and a list of locations in Insomnia. 
-
 * It's done when the DELETE route `/api/travellers/:id` removes a traveller and any trips associated with them and returns a successful response in Insomnia.
 
 * It's done when the GET route `/api/locations` returns all location data in Insomnia.
